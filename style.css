@@ -1,0 +1,149 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+min-height:100vh;
+background:radial-gradient(circle at top,#ff9a9e,#fad0c4);
+overflow:hidden;
+}
+
+/* PARTICLES */
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:radial-gradient(circle,#fff 1px,transparent 1px);
+background-size:40px 40px;
+opacity:.2;
+animation:move 60s linear infinite;
+}
+
+@keyframes move{
+to{background-position:1000px 1000px;}
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:30px;
+}
+
+.card{
+background:rgba(255,255,255,.3);
+backdrop-filter:blur(25px);
+padding:40px;
+border-radius:30px;
+max-width:1000px;
+text-align:center;
+box-shadow:0 30px 70px rgba(0,0,0,.3);
+animation:float 6s infinite;
+}
+
+@keyframes float{
+50%{transform:translateY(-15px)}
+}
+
+h1{
+font-size:3rem;
+background:linear-gradient(90deg,#ff0066,#ffcc00);
+-webkit-background-clip:text;
+color:transparent;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px pink;}
+to{text-shadow:0 0 30px hotpink;}
+}
+
+#name{
+font-size:2rem;
+margin:15px 0;
+color:#ff0066;
+}
+
+p{
+font-size:1.2rem;
+color:#333;
+margin-bottom:20px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:15px;
+cursor:pointer;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.15);
+}
+
+button{
+margin:15px;
+padding:12px 30px;
+border:none;
+border-radius:50px;
+font-size:1rem;
+background:linear-gradient(90deg,#ff0066,#ffcc00);
+color:white;
+cursor:pointer;
+}
+
+/* LIGHTBOX */
+.lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.8);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.lightbox img{
+max-width:80%;
+border-radius:20px;
+}
+
+/* HEARTS */
+.heart{
+position:fixed;
+color:red;
+animation:rise 6s linear forwards;
+}
+
+@keyframes rise{
+0%{bottom:-10px;opacity:1}
+100%{bottom:100vh;opacity:0}
+}
+
+/* CONFETTI */
+.confetti{
+position:fixed;
+width:10px;
+height:10px;
+animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+to{transform:translateY(100vh) rotate(720deg);}
+}
+
+@media(max-width:800px){
+.gallery{grid-template-columns:repeat(2,1fr)}
+h1{font-size:2.2rem}
+}

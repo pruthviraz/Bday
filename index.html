@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Special Wishes 💕</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<audio id="music" autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+</audio>
+
+<div class="hero">
+<div class="card">
+
+<h1>Happy Birthday Day 💖</h1>
+
+<div id="name">My Sweet Princess Yeshna 🌸</div>
+
+<p>
+May your life always sparkle with joy, dreams, and endless smiles.
+You are deeply loved 💕
+</p>
+
+<div class="gallery">
+<img src="/1.png" onclick="openImg(this)">
+<img src="/2.png" onclick="openImg(this)">
+<img src="/3.png" onclick="openImg(this)">
+<img src="/4.png" onclick="openImg(this)">
+</div>
+
+<button onclick="celebrate()">Send Love 💝</button>
+<button onclick="toggleMusic()">Music 🎵</button>
+
+</div>
+</div>
+
+<div class="lightbox" onclick="closeImg()">
+<img id="popup">
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
